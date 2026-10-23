@@ -1,18 +1,187 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rudesse</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rudesse — Prévention des violences sexuelles en impro au Québec</title>
+<meta name="description" content="Rudesse outille le milieu de l’improvisation québécois pour prévenir la violence sexuelle et promouvoir des comportements sains et éthiques.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. PALETTE ET TYPO : tout se change ici ===== */
+:root{
+  --fond:#F2F7F6;        /* brume douce */
+  --fond-2:#E3EEEB;      /* sections alternées */
+  --encre:#1D3B45;       /* texte et titres (bleu-vert profond) */
+  --encre-douce:#4A6670; /* texte secondaire */
+  --sauge:#9CC5B6;       /* accent calme */
+  --prune:#5A4B86;       /* liens et boutons */
+  --lumiere:#F4DC8E;     /* le « projecteur » de la patinoire */
+  --blanc:#FFFFFF;
+  --titres:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --texte:"Atkinson Hyperlegible",Verdana,sans-serif;
+  --largeur:68rem;
+  --rayon:.9rem;
+}
 
-    <link rel="stylesheet" href="style.css">
+/* ===== 2. BASE ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fond);color:var(--encre);font:1.0625rem/1.65 var(--texte)}
+h1,h2,h3{font-family:var(--titres);line-height:1.15;margin:0 0 .6em;font-weight:700}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--prune)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--prune);outline-offset:3px}
+.wrap{max-width:var(--largeur);margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.alt{background:var(--fond-2)}
+.btn{display:inline-block;background:var(--prune);color:var(--blanc);padding:.8rem 1.5rem;border-radius:99px;text-decoration:none;font-weight:700}
+.btn:hover{background:var(--encre)}
+.btn.sec{background:transparent;color:var(--prune);box-shadow:inset 0 0 0 2px var(--prune)}
+.btn.sec:hover{background:var(--prune);color:var(--blanc)}
+
+/* ===== 3. EN-TÊTE ===== */
+header{padding:1rem 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.logo{font-family:var(--titres);font-size:1.5rem;font-weight:700;color:var(--encre);text-decoration:none}
+nav a{margin-left:1.25rem;color:var(--encre);text-decoration:none}
+nav a:hover{text-decoration:underline}
+
+/* ===== 4. HÉRO : le projecteur ===== */
+.hero{padding:5rem 0 6rem;background:radial-gradient(circle at 78% 40%,var(--lumiere) 0,rgba(244,220,142,.35) 14rem,transparent 24rem)}
+.hero p{font-size:1.25rem;color:var(--encre-douce)}
+.hero .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+
+/* ===== 5. BANDEAU D'AIDE ===== */
+.aide{background:var(--encre);color:var(--blanc);padding:1.4rem 0}
+.aide .wrap{display:flex;gap:.6rem 1.5rem;flex-wrap:wrap;align-items:center}
+.aide strong{font-family:var(--titres);font-size:1.15rem}
+.aide a{color:var(--lumiere)}
+
+/* ===== 6. CONTENU ===== */
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.formation ul{margin:0;padding:0;list-style:none;border-left:4px solid var(--sauge)}
+.formation li{padding:.9rem 0 .9rem 1.25rem}
+.formation li strong{display:block}
+dl{margin:0;display:grid;gap:1.1rem}
+dt{font-family:var(--titres);font-weight:700;font-size:1.15rem}
+dd{margin:.15rem 0 0;color:var(--encre-douce)}
+.recos dl{grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.recos dl>div{border-top:4px solid var(--sauge);padding-top:.8rem}
+
+/* ===== 7. PIED DE PAGE ===== */
+footer{background:var(--encre);color:var(--blanc);padding:3rem 0}
+footer a{color:var(--lumiere)}
+footer p{color:#D5E3E0}
+
+@media (max-width:760px){
+  .deux{grid-template-columns:1fr;gap:1.5rem}
+  nav a{margin:0 1rem 0 0}
+  section{padding:3.2rem 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
-
 <body>
 
-    <h1>Bienvenue sur Rudesse</h1>
-    
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Rudesse</a>
+    <nav aria-label="Navigation principale">
+      <a href="#mandat">Notre mandat</a>
+      <a href="#formation">Formation</a>
+      <a href="#recommandations">Recommandations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <script src="script.js"></script>
+<main>
+  <!-- HÉRO -->
+  <div class="hero">
+    <div class="wrap">
+      <h1>Une impro plus saine,<br>pour toutes et tous.</h1>
+      <p>Rudesse accompagne le milieu de l’improvisation au Québec pour prévenir la violence sexuelle et encourager des comportements sains et éthiques.</p>
+      <div class="actions">
+        <a class="btn" href="#formation">Découvrir la formation</a>
+        <a class="btn sec" href="#contact">Nous écrire</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANDEAU D'AIDE (liens tirés de la formation) -->
+  <div class="aide" id="aide">
+    <div class="wrap">
+      <strong>Besoin d’aide ?</strong>
+      <span>En cas de danger, appelez le <strong>911</strong>.</span>
+      <span>Pour du soutien : <a href="https://cavac.qc.ca/contact">CAVAC, nous joindre</a></span>
+    </div>
+  </div>
+
+  <!-- MANDAT -->
+  <section id="mandat">
+    <div class="wrap deux">
+      <div>
+        <h2>Notre mandat</h2>
+        <p>Rudesse a été créé en 2020 et existe officiellement depuis 2021. <!-- TODO : confirmer ces dates, ajouter l’historique et la distinction avec le mandat initial --></p>
+        <p>Notre mandat actuel : prévention, sensibilisation et promotion de comportements sains, de façon proactive et positive. Nous voulons être un vecteur de changement. <!-- TODO : reformuler avec le texte officiel de Rudesse --></p>
+      </div>
+      <div>
+        <h3>Notre approche</h3>
+        <p>Nous faisons partie du milieu de l’impro. Nous savons qu’il est difficile d’en parler sans tomber dans les blagues, alors nous abordons le sujet avec une certaine légèreté, sans rien banaliser.</p>
+        <p>Nous n’avons pas la vérité infuse : tout est à construire, ensemble.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATION -->
+  <section id="formation" class="alt formation">
+    <div class="wrap deux">
+      <div>
+        <h2>La formation</h2>
+        <p>Une formation interactive d’environ deux heures, inspirée du contenu de Grip Montréal et adaptée à la réalité de l’impro. Elle se donne en ligne ou en personne.</p>
+        <a class="btn" href="#contact">Demander une formation</a>
+      </div>
+      <ul>
+        <li><strong>La culture de l’impro</strong>Art ou sport ? Ce que la culture du milieu influence.</li>
+        <li><strong>Violences sexuelles et consentement</strong>Définitions, zones grises et paramètres du consentement.</li>
+        <li><strong>Rapports de pouvoir</strong>Autorité et influence en impro, et ce que dit la loi.</li>
+        <li><strong>Éthique en improvisation</strong>Des mises en situation pour discuter et réfléchir ensemble.</li>
+        <li><strong>Rôles et responsabilités</strong>Entraîneur·es, capitaines, interprètes et ligues.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RECOMMANDATIONS -->
+  <section id="recommandations" class="recos">
+    <div class="wrap">
+      <h2>Des recommandations pour les ligues</h2>
+      <p>Nous ne cherchons pas à imposer des pratiques. Nous proposons des outils, et chaque ligue choisit ce qui répond à ses besoins.</p>
+      <dl>
+        <div><dt>Cercle de consentement</dt><dd>Un exercice pour apprendre à demander, donner et refuser un consentement.</dd></div>
+        <div><dt>Code de conduite et politique</dt><dd>Des comportements attendus et proscrits, avec des conséquences claires.</dd></div>
+        <div><dt>Traitement des plaintes</dt><dd>Une procédure pour recevoir et traiter les communications.</dd></div>
+        <div><dt>Personnes ressources</dt><dd>Une ou deux personnes désignées, dans le respect de la confidentialité.</dd></div>
+        <div><dt>Gardien·ne du senti</dt><dd>Une présence attentive lors des événements où il y a consommation.</dd></div>
+        <div><dt>Formation des membres</dt><dd>Pour que toute la ligue partage le même langage.</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <h2>Parlons-en</h2>
+    <p>Une question, une idée, une ligue qui veut agir ? Nous aimons collaborer.</p>
+    <p><a href="mailto:contact@exemple.ca">contact@exemple.ca</a> <!-- TODO : vraie adresse courriel, réseaux sociaux --></p>
+    <p><small>© Rudesse <!-- TODO : année et mentions légales --></small></p>
+  </div>
+</footer>
+
 </body>
 </html>
